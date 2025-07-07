@@ -1,156 +1,186 @@
-# Estructuras No Lineales – Ejercicios Árboles
 
-Este proyecto contiene la solución a cuatro ejercicios prácticos sobre estructuras de datos tipo árbol binario, como parte del aprendizaje de estructuras no lineales en Java. Cada ejercicio se encuentra organizado en su propia carpeta, siguiendo la convención de paquetes y buenas prácticas.
+# Práctica de Árboles Binarios
 
----
+## 📌 Información General
 
-## Identificación del Estudiante (Obligatorio)
-
-Antes de comenzar a programar o ejecutar el proyecto, **debes completar tu nombre y correo institucional en el archivo `student.env`** que se encuentra en la raíz del proyecto. Este archivo es necesario para validar tu identidad como autor del trabajo.
-
-### ¿Por qué es obligatorio?
-
-Este proyecto utiliza una verificación automática que valida que has ingresado tu información personal. Si no lo haces:
-
-- Al ejecutar el proyecto (`App.java`) verás este mensaje de error:
-```
-❌ Debes completar STUDENT_NAME y STUDENT_EMAIL en student.env
-```
-- No podrás enviar tu código (`push`) al repositorio si tienes activado el sistema de validación local.
-- Las pruebas automáticas en GitHub Actions también fallarán si no detectan tu nombre y correo.
-
-### ¿Qué debo hacer?
-
-1. Abre el archivo `student.env` que ya está creado en el proyecto.
-2. Rellena tus datos:
-
-```
-STUDENT_NAME=Tu Nombre Completo
-STUDENT_EMAIL=tu.correo@institucion.edu.ec
-```
-
-
-3. **No borres estas líneas ni cambies los nombres de las variables.**
-4. Guarda los cambios y vuelve a ejecutar el programa o hacer push.
-
-> 💡 Este mecanismo asegura la autoría del código y que cada estudiante reciba su evaluación automática de forma personalizada.
+- **Título:** Estructuras No Lineales – Ejercicios Árboles
+- **Asignatura:** Estructura de Datos
+- **Carrera:** Computación
+- **Estudiante:** Dave Fernando Sigüenza Vallejo - Grupo 2
+- **Fecha:** 07 / 07 / 2025
+- **Profesor:** Ing. Pablo Torres
 
 ---
 
+## 🛠️ Descripción
 
+Este proyecto contiene la implementación de 4 ejercicios que utilizan árboles binarios en Java:
 
+1. Insertar elementos en un Árbol Binario de Búsqueda (BST).
+2. Invertir un Árbol Binario.
+3. Listar nodos por niveles en Listas Enlazadas.
+4. Calcular la Profundidad Máxima de un Árbol Binario.
 
-## Explicación para el estudiante
+Cada ejercicio está ubicado en su propia carpeta, contiene clases `Node`, `BinaryTree` y `Main`, e incluye ejemplos probados.
+
+---
+
+## 🚀 Ejecución
+
+Para compilar y ejecutar los ejercicios:
+
+1. Entra a la carpeta del ejercicio (por ejemplo `Ejercicio_01_insert`).
+2. Compila los archivos:
+   ```bash
+   javac *.java
+   ```
+3. Ejecuta el archivo principal:
+   ```bash
+   java Main
+   ```
+
+---
+
+## 🧑‍💻 Ejercicio 01: Insertar en un Árbol Binario de Búsqueda (BST)
+
+📁 Carpeta: `Ejercicio_01_insert`
+
+**Descripción:**  
+Se implementa un Árbol Binario de Búsqueda (BST), una estructura donde cada nodo contiene un valor, y los valores menores se colocan a la izquierda y los mayores a la derecha.  
+El método de inserción se realiza de manera recursiva, creando un árbol ordenado que permite búsquedas rápidas.
+
+**Input:**
+```
+[5, 3, 7, 2, 4, 6, 8]
+```
+
+**Output (Recorrido InOrden):**
+```
+2 3 4 5 6 7 8
+```
+
+---
+
+## 🧑‍💻 Ejercicio 02: Invertir un Árbol Binario
+
+📁 Carpeta: `Ejercicio_02_invert`
+
+**Descripción:**  
+Este ejercicio toma un árbol binario y lo invierte completamente. Se recorren los nodos de forma recursiva y se intercambian los subárboles izquierdo y derecho de cada nodo.  
+Esto da como resultado una imagen espejo del árbol original.
+
+**Input:**
+```
+        4
+       / \
+      2   7
+     / \ / \
+    1  3 6  9
+```
+
+**Output esperado:**
+```
+        4
+       / \
+      7   2
+     / \ / \
+    9  6 3  1
+```
+
+**Recorrido InOrden del árbol invertido:**
+```
+9 7 6 4 3 2 1
+```
+
+---
+
+## 🧑‍💻 Ejercicio 03: Listar Niveles en Listas Enlazadas
+
+📁 Carpeta: `Ejercicio_03_listLeves`
+
+**Descripción:**  
+Este ejercicio recorre el árbol binario nivel por nivel utilizando una cola (BFS) y almacena los nodos de cada nivel en una lista enlazada.  
+El resultado es una colección de listas enlazadas, una por cada nivel del árbol, lo que permite representar visualmente la estructura por niveles.
+
+**Input:**
+```
+        4
+       / \
+      2   7
+     / \ / \
+    1  3 6  9
+```
+
+**Output esperado:**
+```
+Nivel 0: 4  
+Nivel 1: 2 -> 7   
+Nivel 2: 1 -> 3 -> 6 -> 9 
+```
+
+---
+
+## 🧑‍💻 Ejercicio 04: Calcular la Profundidad Máxima
+
+📁 Carpeta: `Ejercicio_04_depth`
+
+**Descripción:**  
+Este ejercicio calcula la profundidad (altura) de un árbol binario, que es el número máximo de niveles desde la raíz hasta una hoja.  
+Se implementa una función recursiva que compara la profundidad del subárbol izquierdo y derecho, y retorna el valor máximo más uno (por el nodo actual).
+
+**Input:**
+```
+        4
+       / \
+      2   7
+     / \   \  
+    1   3   8 
+```
+
+**Output esperado:**
+```
+3
+```
+
+---
+
+## ✅ Estructura del Proyecto
 
 ```
 src/
-│
-├── Materia/
-│
-├── Ejercicio_01_insert/
-├── Ejercicio_02_invert/
-├── Ejercicio_03_listLeves/
-└── Ejercicio_04_depth/
+└── Materia/
+    ├── Ejercicio_01_insert/
+    ├── Ejercicio_02_invert/
+    ├── Ejercicio_03_listLeves/
+    └── Ejercicio_04_depth/
 ```
 
 ---
 
-## Descripción de Ejercicios
+## 📝 Observaciones
 
-### Ejercicio 01: Insertar en un Árbol Binario de Búsqueda (BST)
-
-Carpeta: `Ejercicio_01_insert`
-Implementa un algoritmo para insertar nodos en un Árbol Binario de Búsqueda.
-
- **Input de ejemplo:** `[5, 3, 7, 2, 4, 6, 8]`
- **Output esperado:**
-
-```
-    5
-  3   7
- 2 4 6 8
-```
+- Cada carpeta contiene sus archivos `.java`, probados y funcionales.
+- Cada clase principal es `Main.java` e incluye método `main()` para ejecutar el ejercicio.
+- Se realizaron pruebas con los datos indicados en la práctica.
 
 ---
 
-### Ejercicio 02: Invertir un Árbol Binario
+## 📤 Subida al Repositorio
 
-📂 Carpeta: `Ejercicio_02_invert`
-Dada la raíz de un árbol binario, el algoritmo devuelve su versión invertida (espejo).
+Sube tu proyecto a GitHub y realiza el commit final con:
 
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
+```bash
+git add .
+git commit -m "Estructuras No Lineales – Ejercicios Arboles"
+git push
 ```
 
-**Output esperado:**
-
-```
-    4
-  7   2
-9  6 3  1
-```
+📎 Sube la URL del repositorio al AVAC.
+https://github.com/Davesoo/icc-est-u2-estNoLin-ejercicios.git
 
 ---
 
-### Ejercicio 03: Listar Niveles en Listas Enlazadas
-
-📂 Carpeta: `Ejercicio_03_listLeves`
-Devuelve una lista enlazada con los nodos por nivel. Si hay N niveles, se obtienen N listas.
-
- **Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3 6  9
-```
-
-**Output esperado:**
-
-```
-4  
-2 → 7  
-1 → 3 → 6 → 9
-```
-
----
-
-### Ejercicio 04: Calcular la Profundidad Máxima
-
-Carpeta: `Ejercicio_04_depth`
-Calcula la profundidad máxima de un árbol binario (la longitud del camino más largo desde la raíz hasta una hoja).
-
-**Input de ejemplo:**
-
-```
-    4
-  2   7
-1  3  
-8
-```
-
-**Output esperado:** `4`
-
----
-
-## Indicaciones Generales
-
-* Lee cuidadosamente el enunciado de cada ejercicio.
-* Cada carpeta debe contener:
-
-  * Código fuente Java.
-  * Casos de prueba.
-  * Comentarios claros.
-* Realiza commit y push con el mensaje:
-
-  ```
-  Estructuras No Lineales – Ejercicios Árboles
-  ```
-* En el AVAC, sube la **URL del repositorio** con el código.
+👨‍🏫 **Profesor:** Ing. Pablo Torres
 
 ---
 
